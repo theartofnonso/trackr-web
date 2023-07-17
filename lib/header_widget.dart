@@ -32,17 +32,12 @@ class HeaderWidget extends StatelessWidget {
                       color: Colors.white70,
                       fontSize: 16),
                   children: const <TextSpan>[
-                    TextSpan(
-                        text: "KISS: Keep it simple stupid,"),
-                    TextSpan(text: " "),
-                    TextSpan(
-                        text:
-                        'track the duration of any activity'),
-                    TextSpan(text: " "),
-                    TextSpan(
-                        text: 'and understand your behaviour',
-                        style: TextStyle(color: Colors.white)),
-                  ])),
+                TextSpan(
+                    text: 'Improve or cut down',
+                    style: TextStyle(color: Colors.white)),
+                TextSpan(text: ' '),
+                TextSpan(text: 'time wasted on certain activities'),
+              ])),
           const SizedBox(height: 30),
           RichText(
               text: TextSpan(
@@ -51,14 +46,14 @@ class HeaderWidget extends StatelessWidget {
                       fontSize: 16,
                       color: Colors.white70),
                   children: const <TextSpan>[
-                    TextSpan(
-                        text:
+                TextSpan(
+                    text:
                         "If you have ever tracked an activity or currently track any,"),
-                    TextSpan(text: " "),
-                    TextSpan(
-                        text: "come on board",
-                        style: TextStyle(color: Colors.white)),
-                  ])),
+                TextSpan(text: " "),
+                TextSpan(
+                    text: "come on board",
+                    style: TextStyle(color: Colors.white)),
+              ])),
           const SizedBox(
             height: 20,
           ),
@@ -69,13 +64,12 @@ class HeaderWidget extends StatelessWidget {
                       fontSize: 14,
                       color: Colors.white70),
                   children: const <TextSpan>[
-                    TextSpan(text: "Email us at"),
-                    TextSpan(text: " "),
-                    TextSpan(
-                        text: "hello@usetracker.xyz",
-                        style: TextStyle(
-                            color: Colors.white)),
-                  ])),
+                TextSpan(text: "Email us at"),
+                TextSpan(text: " "),
+                TextSpan(
+                    text: "hello@usetracker.xyz",
+                    style: TextStyle(color: Colors.white)),
+              ])),
         ],
       ),
     );
