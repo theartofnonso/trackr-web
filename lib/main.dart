@@ -17,9 +17,9 @@ class MyApp extends StatelessWidget {
       title: "Tracker - Just track an activity",
       theme: ThemeData(
         colorScheme: const ColorScheme.dark(),
-        useMaterial3: true,
+        useMaterial3: true, textSelectionTheme: TextSelectionThemeData(selectionColor: Colors.white.withOpacity(0.2)),
       ),
-      home: const LandingPage(),
+      home: const SelectionArea(child: LandingPage()),
     );
   }
 }

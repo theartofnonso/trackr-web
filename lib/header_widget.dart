@@ -43,13 +43,12 @@ class HeaderWidget extends StatelessWidget {
           const SizedBox(
             height: 5,
           ),
-          RichText(
-              text: TextSpan(
-                  style: GoogleFonts.pathwayExtreme(
-                      fontWeight: FontWeight.w500,
-                      color: Colors.white70,
-                      fontSize: 16),
-                  children: const <TextSpan>[
+          Text.rich(TextSpan(
+              style: GoogleFonts.pathwayExtreme(
+                  fontWeight: FontWeight.w500,
+                  color: Colors.white70,
+                  fontSize: 16),
+              children: const <TextSpan>[
                 TextSpan(
                     text: 'Improve or cut down',
                     style: TextStyle(color: Colors.white)),
@@ -57,13 +56,12 @@ class HeaderWidget extends StatelessWidget {
                 TextSpan(text: 'time wasted on certain activities'),
               ])),
           const SizedBox(height: 30),
-          RichText(
-              text: TextSpan(
-                  style: GoogleFonts.pathwayExtreme(
-                      fontWeight: FontWeight.w500,
-                      fontSize: 16,
-                      color: Colors.white70),
-                  children: <TextSpan>[
+          Text.rich(TextSpan(
+              style: GoogleFonts.pathwayExtreme(
+                  fontWeight: FontWeight.w500,
+                  fontSize: 16,
+                  color: Colors.white70),
+              children: <TextSpan>[
                 const TextSpan(
                     text:
                         "If you have ever tracked an activity or currently track any,"),
@@ -81,13 +79,12 @@ class HeaderWidget extends StatelessWidget {
           const SizedBox(
             height: 20,
           ),
-          RichText(
-              text: TextSpan(
-                  style: GoogleFonts.pathwayExtreme(
-                      fontWeight: FontWeight.w500,
-                      fontSize: 14,
-                      color: Colors.white70),
-                  children: <TextSpan>[
+          Text.rich(TextSpan(
+              style: GoogleFonts.pathwayExtreme(
+                  fontWeight: FontWeight.w500,
+                  fontSize: 14,
+                  color: Colors.white70),
+              children: <TextSpan>[
                 const TextSpan(text: "Email us at"),
                 const TextSpan(text: " "),
                 TextSpan(
