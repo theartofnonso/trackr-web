@@ -1,6 +1,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:mailto/mailto.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import 'logo_widget.dart';
@@ -14,6 +15,13 @@ class HeaderWidget extends StatelessWidget {
     if (!await launchUrl(uri)) {
       throw Exception('Could not launch $uri');
     }
+  }
+
+  _launchMailto() async {
+    final mailtoLink =
+        Mailto(to: ['hello@usetracker.xyz'], subject: 'Hello Tracker team');
+    final Uri uri = Uri.parse('$mailtoLink');
+    await launchUrl(uri);
   }
 
   @override
@@ -79,12 +87,18 @@ class HeaderWidget extends StatelessWidget {
                       fontWeight: FontWeight.w500,
                       fontSize: 14,
                       color: Colors.white70),
-                  children: const <TextSpan>[
-                TextSpan(text: "Email us at"),
-                TextSpan(text: " "),
+                  children: <TextSpan>[
+                const TextSpan(text: "Email us at"),
+                const TextSpan(text: " "),
                 TextSpan(
                     text: "hello@usetracker.xyz",
-                    style: TextStyle(color: Colors.white)),
+                    style: const TextStyle(
+                        color: Colors.white,
+                        decoration: TextDecoration.underline),
+                    recognizer: TapGestureRecognizer()
+                      ..onTap = () {
+                        _launchMailto();
+                      }),
               ])),
         ],
       ),
