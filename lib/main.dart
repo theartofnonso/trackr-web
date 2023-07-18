@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:tracker/landing_page.dart';
+import 'package:url_strategy/url_strategy.dart' as url_strategy;
 
 void main() {
+  url_strategy.setPathUrlStrategy();
   runApp(const MyApp());
 }
 
