@@ -14,6 +14,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      title: "Tracker",
       theme: ThemeData(
         colorScheme: const ColorScheme.dark(),
         useMaterial3: true,
