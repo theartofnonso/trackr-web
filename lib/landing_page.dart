@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tracker/app_constants.dart';
 import 'package:tracker/header_widget.dart';
 
 import 'animated_images_widget.dart';
@@ -11,7 +12,7 @@ class LandingPage extends StatelessWidget {
     final size = MediaQuery.of(context).size;
     final isLarge = size.width >= 900;
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: tealBlueDark,
       body: Padding(
         padding: const EdgeInsets.all(30.0),
         child: Center(

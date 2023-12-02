@@ -4,14 +4,12 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:mailto/mailto.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import 'logo_widget.dart';
-
 class HeaderWidget extends StatelessWidget {
   const HeaderWidget({super.key});
 
   /// Launch the Stripe onboarding URL
   Future<void> _launchUrl() async {
-    final Uri uri = Uri.parse("https://yt73ad93a36.typeform.com/to/bs9oZKqt");
+    final Uri uri = Uri.parse("https://instagram.com/usetrackr");
     if (!await launchUrl(uri)) {
       throw Exception('Could not launch $uri');
     }
@@ -19,7 +17,7 @@ class HeaderWidget extends StatelessWidget {
 
   _launchMailto() async {
     final mailtoLink =
-        Mailto(to: ['hello@usetracker.xyz'], subject: 'Hello Tracker team');
+        Mailto(to: ['hello@usetracker.xyz'], subject: 'Hello Trackr team');
     final Uri uri = Uri.parse('$mailtoLink');
     await launchUrl(uri);
   }
@@ -31,11 +29,15 @@ class HeaderWidget extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const LogoWidget(),
+          Image.asset(
+            'images/trackr.png',
+            fit: BoxFit.contain,
+            height: 14, // Adjust the height as needed
+          ),
           const SizedBox(
             height: 10,
           ),
-          Text("JUST TRACK AN ACTIVITY",
+          Text("IMPROVE PERFORMANCE",
               style: GoogleFonts.pathwayExtreme(
                   fontWeight: FontWeight.w700,
                   fontSize: 24,
@@ -50,42 +52,19 @@ class HeaderWidget extends StatelessWidget {
                   fontSize: 16),
               children: const <TextSpan>[
                 TextSpan(
-                    text: 'Improve or cut down',
+                    text: 'Create, log and track',
                     style: TextStyle(color: Colors.white)),
                 TextSpan(text: ' '),
-                TextSpan(text: 'time wasted on certain activities'),
+                TextSpan(text: 'your workouts'),
               ])),
-          const SizedBox(height: 30),
-          Text.rich(TextSpan(
-              style: GoogleFonts.pathwayExtreme(
-                  fontWeight: FontWeight.w500,
-                  fontSize: 16,
-                  color: Colors.white70),
-              children: <TextSpan>[
-                const TextSpan(
-                    text:
-                        "If you have ever tracked an activity or currently track any,"),
-                const TextSpan(text: " "),
-                TextSpan(
-                    text: "come on board",
-                    style: const TextStyle(
-                        color: Colors.white,
-                        decoration: TextDecoration.underline),
-                    recognizer: TapGestureRecognizer()
-                      ..onTap = () {
-                        _launchUrl();
-                      }),
-              ])),
-          const SizedBox(
-            height: 20,
-          ),
+          const SizedBox(height: 20),
           Text.rich(TextSpan(
               style: GoogleFonts.pathwayExtreme(
                   fontWeight: FontWeight.w500,
                   fontSize: 14,
                   color: Colors.white70),
               children: <TextSpan>[
-                const TextSpan(text: "Email us at"),
+                const TextSpan(text: "Talk to us"),
                 const TextSpan(text: " "),
                 TextSpan(
                     text: "hello@usetracker.xyz",
@@ -96,6 +75,24 @@ class HeaderWidget extends StatelessWidget {
                       ..onTap = () {
                         _launchMailto();
                       }),
+              ])),
+          const SizedBox(height: 10),
+          Text.rich(TextSpan(
+              style: GoogleFonts.pathwayExtreme(
+                  fontWeight: FontWeight.w500,
+                  fontSize: 14,
+                  color: Colors.white70),
+              children: <TextSpan>[
+                TextSpan(
+                    text: "@usetrackr",
+                    style: const TextStyle(
+                        color: Colors.white,
+                        decoration: TextDecoration.underline),
+                    recognizer: TapGestureRecognizer()
+                      ..onTap = () {
+                        _launchUrl();
+                      }), const TextSpan(text: " "),
+                const TextSpan(text: "on Instagram"),
               ])),
         ],
       ),

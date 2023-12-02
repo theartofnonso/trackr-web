@@ -14,20 +14,20 @@ class AnimatedImagesWidgetState extends State<AnimatedImagesWidget> with SingleT
   int _currentIndex = 0;
 
   final _imageList = [
-    "images/activity_overview_screen.png",
-    "images/tracking_activity_screen.png",
-    "images/activities_screen.png",
-    "images/activity_tracking_history_screen.png",
+    "images/create_workout_screen.png",
+    "images/log_workout_screen.png",
+    "images/log_preview_screen.png",
+    "images/exercise_stats_screen.png",
   ];
 
   @override
   void initState() {
     super.initState();
     _animationController = AnimationController(
-      duration: const Duration(seconds: 3),
+      duration: const Duration(seconds: 2),
       vsync: this,
     );
-    _animation = Tween<double>(begin: 0, end: 1).animate(_animationController)
+    _animation = Tween<double>(begin: 1, end: 1).animate(_animationController)
       ..addStatusListener((status) {
         if (status == AnimationStatus.completed) {
           setState(() {
