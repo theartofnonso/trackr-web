@@ -1,5 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mailto/mailto.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -16,8 +17,7 @@ class HeaderWidget extends StatelessWidget {
   }
 
   _launchMailto() async {
-    final mailtoLink =
-        Mailto(to: ['hello@usetracker.xyz'], subject: 'Hello Trackr team');
+    final mailtoLink = Mailto(to: ['hello@usetracker.xyz'], subject: 'Hello Trackr team');
     final Uri uri = Uri.parse('$mailtoLink');
     await launchUrl(uri);
   }
@@ -38,62 +38,37 @@ class HeaderWidget extends StatelessWidget {
             height: 10,
           ),
           Text("IMPROVE PERFORMANCE",
-              style: GoogleFonts.pathwayExtreme(
-                  fontWeight: FontWeight.w700,
-                  fontSize: 24,
-                  color: Colors.white)),
+              style: GoogleFonts.pathwayExtreme(fontWeight: FontWeight.w700, fontSize: 24, color: Colors.white)),
           const SizedBox(
             height: 5,
           ),
           Text.rich(TextSpan(
-              style: GoogleFonts.pathwayExtreme(
-                  fontWeight: FontWeight.w500,
-                  color: Colors.white70,
-                  fontSize: 16),
+              style: GoogleFonts.pathwayExtreme(fontWeight: FontWeight.w500, color: Colors.white70, fontSize: 16),
               children: const <TextSpan>[
-                TextSpan(
-                    text: 'Create, log and track',
-                    style: TextStyle(color: Colors.white)),
+                TextSpan(text: 'Create, log and track', style: TextStyle(color: Colors.white)),
                 TextSpan(text: ' '),
                 TextSpan(text: 'your workouts'),
               ])),
-          const SizedBox(height: 20),
+          const SizedBox(height: 16),
           Text.rich(TextSpan(
-              style: GoogleFonts.pathwayExtreme(
-                  fontWeight: FontWeight.w500,
-                  fontSize: 14,
-                  color: Colors.white70),
+              style: GoogleFonts.pathwayExtreme(fontWeight: FontWeight.w500, fontSize: 14, color: Colors.white70),
               children: <TextSpan>[
                 const TextSpan(text: "Talk to us"),
                 const TextSpan(text: " "),
                 TextSpan(
                     text: "hello@usetracker.xyz",
-                    style: const TextStyle(
-                        color: Colors.white,
-                        decoration: TextDecoration.underline),
+                    style: const TextStyle(color: Colors.white, decoration: TextDecoration.underline),
                     recognizer: TapGestureRecognizer()
                       ..onTap = () {
                         _launchMailto();
                       }),
               ])),
-          const SizedBox(height: 10),
-          Text.rich(TextSpan(
-              style: GoogleFonts.pathwayExtreme(
-                  fontWeight: FontWeight.w500,
-                  fontSize: 14,
-                  color: Colors.white70),
-              children: <TextSpan>[
-                TextSpan(
-                    text: "@usetrackr",
-                    style: const TextStyle(
-                        color: Colors.white,
-                        decoration: TextDecoration.underline),
-                    recognizer: TapGestureRecognizer()
-                      ..onTap = () {
-                        _launchUrl();
-                      }), const TextSpan(text: " "),
-                const TextSpan(text: "on Instagram"),
-              ])),
+          const SizedBox(height: 16),
+          Row(children: [
+            GestureDetector(onTap: _launchUrl, child: const FaIcon(FontAwesomeIcons.squareInstagram)),
+            const SizedBox(width: 10),
+            GestureDetector(onTap: () {}, child: const FaIcon(FontAwesomeIcons.appStoreIos))
+          ]),
         ],
       ),
     );
