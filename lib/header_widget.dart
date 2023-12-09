@@ -47,7 +47,7 @@ class HeaderWidget extends StatelessWidget {
               children: const <TextSpan>[
                 TextSpan(text: 'Create, log and track', style: TextStyle(color: Colors.white)),
                 TextSpan(text: ' '),
-                TextSpan(text: 'your workouts'),
+                TextSpan(text: 'your training'),
               ])),
           const SizedBox(height: 16),
           Text.rich(TextSpan(
