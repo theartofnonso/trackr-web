@@ -8,9 +8,15 @@ import 'package:url_launcher/url_launcher.dart';
 class HeaderWidget extends StatelessWidget {
   const HeaderWidget({super.key});
 
-  /// Launch the Stripe onboarding URL
-  Future<void> _launchUrl() async {
+  Future<void> _launchInstagramUrl() async {
     final Uri uri = Uri.parse("https://instagram.com/usetrackr");
+    if (!await launchUrl(uri)) {
+      throw Exception('Could not launch $uri');
+    }
+  }
+
+  Future<void> _launchAppStoreUrl() async {
+    final Uri uri = Uri.parse("https://apps.apple.com/app/6474073502");
     if (!await launchUrl(uri)) {
       throw Exception('Could not launch $uri');
     }
@@ -65,9 +71,9 @@ class HeaderWidget extends StatelessWidget {
               ])),
           const SizedBox(height: 16),
           Row(children: [
-            GestureDetector(onTap: _launchUrl, child: const FaIcon(FontAwesomeIcons.squareInstagram)),
+            GestureDetector(onTap: _launchInstagramUrl, child: const FaIcon(FontAwesomeIcons.squareInstagram)),
             const SizedBox(width: 10),
-            GestureDetector(onTap: () {}, child: const FaIcon(FontAwesomeIcons.appStoreIos))
+            GestureDetector(onTap: _launchAppStoreUrl, child: const FaIcon(FontAwesomeIcons.appStoreIos))
           ]),
         ],
       ),
