@@ -14,11 +14,10 @@ class AnimatedImagesWidgetState extends State<AnimatedImagesWidget> with SingleT
   int _currentIndex = 0;
 
   final _imageList = [
-    "images/overview.png",
-    "images/routine_editor.png",
-    "images/routines.png",
-    "images/routine_preview.png",
-    "images/exercise_stats.png"
+    "images/screen1.png",
+    "images/screen2.png",
+    "images/screen3.png",
+    "images/screen4.png",
   ];
 
   @override
