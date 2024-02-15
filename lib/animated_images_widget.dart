@@ -18,6 +18,7 @@ class AnimatedImagesWidgetState extends State<AnimatedImagesWidget> with SingleT
     "images/screen2.png",
     "images/screen3.png",
     "images/screen4.png",
+    "images/screen5.png",
   ];
 
   @override
