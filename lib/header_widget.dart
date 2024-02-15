@@ -31,7 +31,7 @@ class HeaderWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 350,
+      width: 300,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

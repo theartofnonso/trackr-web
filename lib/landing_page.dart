@@ -30,7 +30,7 @@ class LandingPage extends StatelessWidget {
                     ),
                   )
                 : const Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: <Widget>[
                       HeaderWidget(),
                       SizedBox(height: 30),
