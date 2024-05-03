@@ -22,6 +22,13 @@ class HeaderWidget extends StatelessWidget {
     }
   }
 
+  Future<void> _launchPlayStoreUrl() async {
+    final Uri uri = Uri.parse("https://");
+    if (!await launchUrl(uri)) {
+      throw Exception('Could not launch $uri');
+    }
+  }
+
   _launchMailto() async {
     final mailtoLink = Mailto(to: ['hello@trkr.fit'], subject: 'Hello TRKR team');
     final Uri uri = Uri.parse('$mailtoLink');
@@ -71,7 +78,9 @@ class HeaderWidget extends StatelessWidget {
           Row(children: [
             GestureDetector(onTap: _launchInstagramUrl, child: const FaIcon(FontAwesomeIcons.squareInstagram)),
             const SizedBox(width: 10),
-            GestureDetector(onTap: _launchAppStoreUrl, child: const FaIcon(FontAwesomeIcons.appStoreIos))
+            GestureDetector(onTap: _launchAppStoreUrl, child: const FaIcon(FontAwesomeIcons.appStoreIos)),
+            const SizedBox(width: 10),
+            GestureDetector(onTap: _launchPlayStoreUrl, child: const FaIcon(FontAwesomeIcons.googlePlay, size: 20,))
           ]),
         ],
       ),
