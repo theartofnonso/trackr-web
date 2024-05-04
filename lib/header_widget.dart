@@ -79,8 +79,8 @@ class HeaderWidget extends StatelessWidget {
             GestureDetector(onTap: _launchInstagramUrl, child: const FaIcon(FontAwesomeIcons.squareInstagram)),
             const SizedBox(width: 10),
             GestureDetector(onTap: _launchAppStoreUrl, child: const FaIcon(FontAwesomeIcons.appStoreIos)),
-            const SizedBox(width: 10),
-            GestureDetector(onTap: _launchPlayStoreUrl, child: const FaIcon(FontAwesomeIcons.googlePlay, size: 20,))
+            // const SizedBox(width: 10),
+            // GestureDetector(onTap: _launchPlayStoreUrl, child: const FaIcon(FontAwesomeIcons.googlePlay, size: 20,))
           ]),
         ],
       ),
