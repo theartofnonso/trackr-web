@@ -28,8 +28,6 @@ class MyApp extends StatelessWidget {
           onSecondary: Colors.white,
           error: Colors.white,
           onError: Colors.black,
-          background: tealBlueDark,
-          onBackground: Colors.white,
           surface: tealBlueLighter,
           onSurface: Colors.white,
         ),
@@ -50,9 +48,9 @@ class MyApp extends StatelessWidget {
         ),
         filledButtonTheme: FilledButtonThemeData(
           style: ButtonStyle(
-              foregroundColor: MaterialStateProperty.all(Colors.white),
-              backgroundColor: MaterialStateProperty.all(tealBlueLight),
-              shape: MaterialStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)))),
+              foregroundColor: WidgetStateProperty.all(Colors.white),
+              backgroundColor: WidgetStateProperty.all(tealBlueLight),
+              shape: WidgetStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)))),
         ), useMaterial3: true, textSelectionTheme: TextSelectionThemeData(selectionColor: Colors.white.withOpacity(0.2))
       ),
       home: const SelectionArea(child: LandingPage()),
